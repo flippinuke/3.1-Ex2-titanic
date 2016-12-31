@@ -6,6 +6,12 @@ df <- read.csv("titanic_original.csv")
 View(df)
 str(df)
 
+# Because Excel places column heading in the first row, and R does not appear to, I remove
+# the last row. Otherwise, you see that the last row is brought in the "NA's"
+df <- head(df,-1)
+
+View(df)
+
 ## 1: Point of embarkation
 
 # using sub(), replace empty values in df$embarked with "S"
